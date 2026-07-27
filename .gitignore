@@ -59,11 +59,14 @@ models/
 logs/
 
 # =========================================================
-# Testing
+# Testing & Development Files (Ignored for Clean Deployment)
 # =========================================================
+tests/
 .pytest_cache/
 .coverage
 htmlcov/
+.python-version
+.env.example
 
 # =========================================================
 # Docker
@@ -82,6 +85,6 @@ inspect_edge_cases.py
 run_real_evaluation.py
 test_real_data.py
 test_api.py
-.env.example
+
 
 

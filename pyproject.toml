@@ -1,0 +1,39 @@
+[project]
+name = "fatpai-resume-jd"
+version = "1.0.0"
+description = "Production-grade AI Resume–JD Semantic Matching Backend using BAAI/bge-large-en-v1.5 embeddings, section-wise matching, and weighted hybrid scoring."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+    { name = "FatPai", email = "fatpai@example.com" },
+]
+
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "sentence-transformers>=3.0.0",
+    "scikit-learn>=1.5.0",
+    "pypdf>=4.0.0",
+    "python-multipart>=0.0.12",
+    "python-dotenv>=1.0.0",
+    "numpy>=1.26.0",
+    "psutil>=5.9.0",
+    "python-docx>=1.2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.27.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+]

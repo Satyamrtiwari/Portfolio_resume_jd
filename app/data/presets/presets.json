@@ -1,0 +1,128 @@
+{
+  "ai_engineer": {
+    "skills": 40.0,
+    "experience": 30.0,
+    "semantic": 15.0,
+    "education": 5.0,
+    "projects": 10.0,
+    "reasoning": {
+      "skills": "AI engineering requires deep proficiency in frameworks (PyTorch/Transformers/LLMs) and core languages.",
+      "experience": "Relevant hands-on experience building production ML pipelines.",
+      "semantic": "General technical domain context match.",
+      "education": "Acts as baseline quantitative/CS eligibility.",
+      "projects": "Demonstrates practical open-source or custom AI project implementations."
+    }
+  },
+  "backend_engineer": {
+    "skills": 45.0,
+    "experience": 30.0,
+    "semantic": 15.0,
+    "education": 5.0,
+    "projects": 5.0,
+    "reasoning": {
+      "skills": "Backend roles prioritize core API, database, and system infrastructure skills.",
+      "experience": "Prior backend development experience and system design exposure.",
+      "semantic": "Overall architectural and code context alignment.",
+      "education": "Minimum degree eligibility requirement.",
+      "projects": "Practical code samples and personal backend projects."
+    }
+  },
+  "frontend_engineer": {
+    "skills": 45.0,
+    "experience": 25.0,
+    "semantic": 15.0,
+    "education": 5.0,
+    "projects": 10.0,
+    "reasoning": {
+      "skills": "Frontend engineering heavily relies on modern UI frameworks, CSS, and web state management.",
+      "experience": "Building responsive UI and user-facing web applications.",
+      "semantic": "UI/UX domain language matching.",
+      "education": "Minimum eligibility requirement.",
+      "projects": "Live web apps, portfolios, and interactive UI projects."
+    }
+  },
+  "data_scientist": {
+    "skills": 35.0,
+    "experience": 25.0,
+    "semantic": 15.0,
+    "education": 15.0,
+    "projects": 10.0,
+    "reasoning": {
+      "skills": "Statistical modeling, Python/R, and machine learning skill set.",
+      "experience": "Data analysis and predictive modeling track record.",
+      "semantic": "Analytical and domain knowledge context.",
+      "education": "High emphasis on STEM degree qualifications (Math, CS, Statistics).",
+      "projects": "Data science case studies, Kaggle, and research projects."
+    }
+  },
+  "healthcare_rcm": {
+    "skills": 40.0,
+    "experience": 35.0,
+    "semantic": 15.0,
+    "education": 5.0,
+    "projects": 5.0,
+    "reasoning": {
+      "skills": "Medical billing, ICD-10, CPT coding, and HIPAA compliance skills.",
+      "experience": "Revenue Cycle Management (RCM) industry experience drives performance.",
+      "semantic": "Medical terminology alignment.",
+      "education": "Minimum administrative/clinical qualification.",
+      "projects": "Operational workflow improvements and process automation."
+    }
+  },
+  "finance": {
+    "skills": 35.0,
+    "experience": 35.0,
+    "semantic": 15.0,
+    "education": 10.0,
+    "projects": 5.0,
+    "reasoning": {
+      "skills": "Financial analysis, modeling, and regulatory compliance skills.",
+      "experience": "Track record in financial institutions or corporate accounting.",
+      "semantic": "Financial terminology and context matching.",
+      "education": "Finance, Accounting, or Commerce degree background.",
+      "projects": "Financial modeling and audit project experience."
+    }
+  },
+  "sales": {
+    "skills": 30.0,
+    "experience": 40.0,
+    "semantic": 20.0,
+    "education": 10.0,
+    "projects": 0.0,
+    "reasoning": {
+      "skills": "CRM tools, negotiation, and pipeline management skills.",
+      "experience": "Demonstrated quota achievement and deal-closing history.",
+      "semantic": "Sales domain and communication alignment.",
+      "education": "General business qualification.",
+      "projects": "Not applicable for standard sales profiles."
+    }
+  },
+  "hr": {
+    "skills": 30.0,
+    "experience": 40.0,
+    "semantic": 20.0,
+    "education": 10.0,
+    "projects": 0.0,
+    "reasoning": {
+      "skills": "ATS, HRIS, labor law, and talent acquisition skills.",
+      "experience": "HR operations and recruitment experience.",
+      "semantic": "HR domain terminology matching.",
+      "education": "Human Resources or Business degree qualification.",
+      "projects": "Not applicable for standard HR roles."
+    }
+  },
+  "general_software_engineer": {
+    "skills": 40.0,
+    "experience": 30.0,
+    "semantic": 20.0,
+    "education": 10.0,
+    "projects": 0.0,
+    "reasoning": {
+      "skills": "Core programming languages, frameworks, and tools.",
+      "experience": "Software engineering professional track record.",
+      "semantic": "General software engineering context match.",
+      "education": "Computer Science or related engineering degree.",
+      "projects": "Standard professional software projects."
+    }
+  }
+}

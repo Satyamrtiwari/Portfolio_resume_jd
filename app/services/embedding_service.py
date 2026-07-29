@@ -9,6 +9,7 @@ Never reloads the model per request.
 from __future__ import annotations
 
 import logging
+import threading
 import time
 
 import numpy as np
@@ -22,12 +23,10 @@ logger = logging.getLogger(__name__)
 
 class EmbeddingService:
     """
-    Service for generating text embeddings using BAAI/bge-large-en-v1.5.
+    Service for generating text embeddings using BAAI/bge models.
 
-    The model is loaded exactly once during initialization and reused
-    for all subsequent requests. This is critical for production
-    performance — model loading takes 5-15 seconds, while inference
-    takes < 100ms.
+    Supports non-blocking background initialization so the web server starts
+    and binds its port instantly (< 0.1s), preventing cloud deployment timeouts.
 
     Attributes:
         _model: The loaded SentenceTransformer model instance.
@@ -39,10 +38,7 @@ class EmbeddingService:
 
     def __init__(self) -> None:
         """
-        Initialize the embedding service and load the model.
-
-        Raises:
-            ModelLoadError: If the model fails to load.
+        Initialize the embedding service without blocking server startup.
         """
         settings = get_settings()
         self._model_name = settings.MODEL_NAME
@@ -50,8 +46,26 @@ class EmbeddingService:
         self._load_time: float = 0.0
         self._embedding_dimension: int = 0
         self._device: str = "cpu"
+        self._load_lock = threading.Lock()
+        self._is_loading: bool = False
 
-        self._load_model()
+    def preload_background(self) -> None:
+        """Start a non-blocking background thread to load the model without delaying server startup."""
+        if self._model is None and not self._is_loading:
+            thread = threading.Thread(target=self._ensure_model_loaded, daemon=True)
+            thread.start()
+
+    def _ensure_model_loaded(self) -> None:
+        """Ensure the SentenceTransformer model is loaded into memory thread-safely."""
+        if self._model is not None:
+            return
+        with self._load_lock:
+            if self._model is None:
+                self._is_loading = True
+                try:
+                    self._load_model()
+                finally:
+                    self._is_loading = False
 
     def _load_model(self) -> None:
         """
@@ -89,18 +103,7 @@ class EmbeddingService:
             ) from exc
 
     def encode(self, text: str) -> np.ndarray:
-        """
-        Generate an embedding vector for a single text.
-
-        Args:
-            text: Input text to encode.
-
-        Returns:
-            1-D numpy array of shape (embedding_dimension,).
-
-        Raises:
-            ModelLoadError: If the model is not loaded.
-        """
+        self._ensure_model_loaded()
         if self._model is None:
             raise ModelLoadError("Embedding model is not loaded.")
 
@@ -112,21 +115,7 @@ class EmbeddingService:
         return np.asarray(embedding)
 
     def encode_batch(self, texts: list[str]) -> list[np.ndarray]:
-        """
-        Generate embeddings for a batch of texts.
-
-        More efficient than calling ``encode()`` in a loop because
-        SentenceTransformer batches internally.
-
-        Args:
-            texts: List of input texts to encode.
-
-        Returns:
-            List of 1-D numpy arrays, one per input text.
-
-        Raises:
-            ModelLoadError: If the model is not loaded.
-        """
+        self._ensure_model_loaded()
         if self._model is None:
             raise ModelLoadError("Embedding model is not loaded.")
 

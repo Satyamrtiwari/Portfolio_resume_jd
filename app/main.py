@@ -67,6 +67,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
     logger.info("Initializing services...")
 
     embedding_service = EmbeddingService()
+    embedding_service.preload_background()
     preprocessing_service = PreprocessingService()
     skill_extraction_service = SkillExtractionService()
 

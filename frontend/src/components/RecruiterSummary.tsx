@@ -17,21 +17,21 @@ export const RecruiterSummary: React.FC<RecruiterSummaryProps> = ({ summary, rec
     >
       {/* Header */}
       <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-white/10">
-        <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
+        <div className="p-3 rounded-xl bg-pink-100 dark:bg-purple-500/10 border border-pink-300 dark:border-purple-500/20 text-pink-700 dark:text-purple-400">
           <Award className="w-6 h-6" />
         </div>
         <div>
-          <h3 className="font-heading font-bold text-xl text-white">Recruiter Executive Brief & Action Plan</h3>
-          <p className="text-xs text-gray-400">Actionable hiring decision recommendation and risk evaluation</p>
+          <h3 className="font-heading font-bold text-xl text-gray-900 dark:text-white">Recruiter Executive Brief & Action Plan</h3>
+          <p className="text-xs text-gray-600 dark:text-gray-400">Actionable hiring decision recommendation and risk evaluation</p>
         </div>
       </div>
 
       {/* Main Executive Summary Banner */}
-      <div className="p-5 rounded-xl bg-indigo-950/30 border border-indigo-500/30 mb-8 flex items-start space-x-4">
-        <UserCheck className="w-6 h-6 text-indigo-400 mt-1 shrink-0" />
+      <div className="p-5 rounded-xl bg-pink-50 dark:bg-indigo-950/30 border border-pink-300 dark:border-indigo-500/30 mb-8 flex items-start space-x-4 shadow-sm">
+        <UserCheck className="w-6 h-6 text-pink-700 dark:text-indigo-400 mt-1 shrink-0" />
         <div>
-          <h4 className="font-heading font-bold text-sm text-indigo-200 mb-1">Executive Summary</h4>
-          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+          <h4 className="font-heading font-bold text-sm text-pink-950 dark:text-indigo-200 mb-1">Executive Summary</h4>
+          <p className="text-xs sm:text-sm text-gray-800 dark:text-gray-300 leading-relaxed font-medium">
             {summary.overall_recommendation}
           </p>
         </div>
@@ -40,15 +40,15 @@ export const RecruiterSummary: React.FC<RecruiterSummaryProps> = ({ summary, rec
       {/* Grid: Strengths vs Weaknesses */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {/* Candidate Strengths */}
-        <div className="p-5 rounded-xl bg-emerald-950/20 border border-emerald-500/30">
-          <h4 className="font-heading font-bold text-sm text-emerald-300 mb-4 flex items-center space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+        <div className="p-5 rounded-xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-300 dark:border-emerald-500/30 shadow-sm">
+          <h4 className="font-heading font-bold text-sm text-emerald-900 dark:text-emerald-300 mb-4 flex items-center space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             <span>Candidate Strengths ({summary.strengths.length})</span>
           </h4>
-          <ul className="space-y-2 text-xs text-gray-200">
+          <ul className="space-y-2 text-xs text-emerald-950 dark:text-gray-200 font-medium">
             {summary.strengths.map((str, idx) => (
               <li key={idx} className="flex items-start space-x-2">
-                <span className="text-emerald-400 font-bold">•</span>
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">•</span>
                 <span>{str}</span>
               </li>
             ))}
@@ -56,15 +56,15 @@ export const RecruiterSummary: React.FC<RecruiterSummaryProps> = ({ summary, rec
         </div>
 
         {/* Candidate Weaknesses */}
-        <div className="p-5 rounded-xl bg-red-950/20 border border-red-500/30">
-          <h4 className="font-heading font-bold text-sm text-red-300 mb-4 flex items-center space-x-2">
-            <AlertOctagon className="w-4 h-4 text-red-400" />
+        <div className="p-5 rounded-xl bg-rose-50 dark:bg-red-950/20 border border-rose-300 dark:border-red-500/30 shadow-sm">
+          <h4 className="font-heading font-bold text-sm text-rose-950 dark:text-red-300 mb-4 flex items-center space-x-2">
+            <AlertOctagon className="w-4 h-4 text-rose-600 dark:text-red-400" />
             <span>Qualification Gaps / Weaknesses ({summary.weaknesses.length})</span>
           </h4>
-          <ul className="space-y-2 text-xs text-gray-200">
+          <ul className="space-y-2 text-xs text-rose-950 dark:text-gray-200 font-medium">
             {summary.weaknesses.map((weak, idx) => (
               <li key={idx} className="flex items-start space-x-2">
-                <span className="text-red-400 font-bold">•</span>
+                <span className="text-rose-600 dark:text-red-400 font-bold">•</span>
                 <span>{weak}</span>
               </li>
             ))}
@@ -73,15 +73,15 @@ export const RecruiterSummary: React.FC<RecruiterSummaryProps> = ({ summary, rec
       </div>
 
       {/* Interview Actionable Recommendation */}
-      <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-between">
+      <div className="p-5 rounded-xl bg-rose-50/50 dark:bg-white/[0.02] border border-pink-300 dark:border-white/10 flex items-center justify-between shadow-sm">
         <div className="flex items-center space-x-3">
-          <HelpCircle className="w-5 h-5 text-indigo-400" />
+          <HelpCircle className="w-5 h-5 text-pink-700 dark:text-indigo-400" />
           <div>
-            <span className="text-xs text-gray-400 block">Recommended Recruiter Next Step:</span>
-            <span className="font-heading font-bold text-sm text-white">{recommendation.interview_recommendation}</span>
+            <span className="text-xs text-gray-600 dark:text-gray-400 block">Recommended Recruiter Next Step:</span>
+            <span className="font-heading font-bold text-sm text-gray-900 dark:text-white">{recommendation.interview_recommendation}</span>
           </div>
         </div>
-        <ArrowRight className="w-5 h-5 text-gray-500" />
+        <ArrowRight className="w-5 h-5 text-pink-700 dark:text-gray-500" />
       </div>
     </motion.div>
   );

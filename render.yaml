@@ -6,7 +6,7 @@ services:
     name: hire-ai-resume-jd
     runtime: python
     region: oregon
-    plan: starter
+    plan: free
     buildCommand: |
       pip install uv &&
       uv sync --no-dev

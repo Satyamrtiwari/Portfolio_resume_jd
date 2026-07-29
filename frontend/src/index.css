@@ -321,3 +321,90 @@ html:not(.dark) .bg-purple-600\/15:hover {
   background-color: #FBCFE8 !important;
   border-color: #DB2777 !important;
 }
+
+/* ── 5. RESULTS DASHBOARD & ATS KEYWORD COVERAGE HIGH CONTRAST (LIGHT MODE) ── */
+/* Matched Skills / Candidate Strengths (Emerald Green) */
+html:not(.dark) .bg-emerald-500\/10,
+html:not(.dark) .bg-emerald-600\/10 {
+  background-color: #ECFDF5 !important;
+  border: 1.5px solid #10B981 !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.08) !important;
+}
+
+html:not(.dark) .bg-emerald-500\/10 .text-emerald-400,
+html:not(.dark) .bg-emerald-600\/10 .text-emerald-400,
+html:not(.dark) .text-emerald-400 {
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+
+html:not(.dark) .bg-emerald-500\/10 .bg-emerald-500\/20,
+html:not(.dark) .bg-emerald-500\/20 {
+  background-color: #D1FAE5 !important;
+  color: #065F46 !important;
+  border: 1px solid #34D399 !important;
+  font-weight: 600 !important;
+}
+
+/* Critical Missing Skills / Qualification Gaps (Amber Gold) */
+html:not(.dark) .bg-amber-500\/10,
+html:not(.dark) .bg-amber-600\/10 {
+  background-color: #FFFBEB !important;
+  border: 1.5px solid #F59E0B !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.08) !important;
+}
+
+html:not(.dark) .bg-amber-500\/10 .text-amber-400,
+html:not(.dark) .bg-amber-600\/10 .text-amber-400,
+html:not(.dark) .text-amber-400 {
+  color: #B45309 !important;
+  font-weight: 700 !important;
+}
+
+html:not(.dark) .bg-amber-500\/10 .bg-amber-500\/20,
+html:not(.dark) .bg-amber-500\/20 {
+  background-color: #FEF3C7 !important;
+  color: #92400E !important;
+  border: 1px solid #FBBF24 !important;
+  font-weight: 600 !important;
+}
+
+/* Optional Gaps / Weaknesses (Rose / Red) */
+html:not(.dark) .bg-rose-500\/10,
+html:not(.dark) .bg-red-500\/10,
+html:not(.dark) .bg-rose-600\/10 {
+  background-color: #FFF1F2 !important;
+  border: 1.5px solid #F43F5E !important;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.08) !important;
+}
+
+html:not(.dark) .bg-rose-500\/10 .text-rose-400,
+html:not(.dark) .bg-red-500\/10 .text-rose-400,
+html:not(.dark) .text-rose-400 {
+  color: #BE123C !important;
+  font-weight: 700 !important;
+}
+
+html:not(.dark) .bg-rose-500\/10 .bg-rose-500\/20,
+html:not(.dark) .bg-rose-500\/20 {
+  background-color: #FFE4E6 !important;
+  color: #9F1239 !important;
+  border: 1px solid #FB7185 !important;
+  font-weight: 600 !important;
+}
+
+/* Executive Summary Box */
+html:not(.dark) .bg-purple-500\/10,
+html:not(.dark) .bg-purple-600\/10 {
+  background-color: #FDF2F8 !important;
+  border: 1.5px solid #F472B6 !important;
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.08) !important;
+}
+
+html:not(.dark) .bg-purple-500\/10 .text-purple-300,
+html:not(.dark) .bg-purple-500\/10 .text-purple-400,
+html:not(.dark) .text-purple-300,
+html:not(.dark) .text-purple-400 {
+  color: #831843 !important;
+  font-weight: 700 !important;
+}

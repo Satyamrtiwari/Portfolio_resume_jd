@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Cpu, Activity, Terminal } from 'lucide-react';
+import { Sparkles, Activity, Terminal, Sun, Moon } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [apiOnline, setApiOnline] = useState<boolean | null>(null);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'dark' ? 'dark' : 'light';
+  });
 
   useEffect(() => {
     fetch('/api/v1/')
@@ -11,19 +15,34 @@ export const Navbar: React.FC = () => {
       .catch(() => setApiOnline(false));
   }, []);
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <header className="sticky top-0 z-50 glass-panel border-b border-white/10 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Brand Logo */}
-        <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 p-0.5 shadow-lg shadow-indigo-500/20">
-            <div className="w-full h-full bg-[#0d0e15] rounded-[10px] flex items-center justify-center">
-              <Cpu className="w-5 h-5 text-indigo-400 animate-pulse" />
-            </div>
+        {/* Brand Logo & Name */}
+        <div
+          className="flex items-center space-x-3 cursor-pointer group"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          {/* Genauk Penguin Logo Container */}
+          <div className="w-10 h-10 rounded-xl bg-white p-1 shadow-lg shadow-indigo-500/20 border border-white/30 flex items-center justify-center transition-transform group-hover:scale-105">
+            <img src="/logo.png" alt="Hire_AI Logo" className="w-full h-full object-contain" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <span className="font-heading font-extrabold text-xl text-white tracking-tight">FatPai</span>
+              <span className="font-heading font-extrabold text-xl text-white tracking-tight">Hire_AI</span>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 uppercase tracking-widest font-semibold">
                 AI Matcher v3
               </span>
@@ -44,7 +63,21 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Right Status Badge & Actions */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3 sm:space-x-4">
+          {/* Theme Switcher Button (Sun / Moon) */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+            className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all shadow-sm flex items-center justify-center cursor-pointer"
+          >
+            {theme === 'light' ? (
+              <Moon className="w-4 h-4 text-purple-300" />
+            ) : (
+              <Sun className="w-4 h-4 text-yellow-400" />
+            )}
+          </button>
+
           <div className="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono">
             <Activity className="w-3.5 h-3.5 text-indigo-400" />
             <span className="text-gray-400">API Status:</span>

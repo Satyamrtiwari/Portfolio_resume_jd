@@ -1,5 +1,5 @@
 # =========================================================
-# Dockerfile — FatPai Resume-JD Semantic Matching Backend
+# Dockerfile — Hire_AI Resume-JD Semantic Matching Backend
 # =========================================================
 # Multi-stage build for production deployment.
 # Stage 1: Install dependencies

@@ -1,4 +1,4 @@
-# 🧠 FatPai — AI Resume–JD Semantic Matching & ATS Engine (v3)
+# 🧠 Hire_AI — AI Resume–JD Semantic Matching & ATS Engine (v3)
 
 Production-grade FastAPI backend for **ATS keyword analysis**, **entity extraction**, **section-wise semantic matching**, **intelligent dynamic weight strategy engine**, and **structured explainability** using **BAAI/bge-large-en-v1.5** embeddings.
 

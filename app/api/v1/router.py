@@ -43,7 +43,7 @@ router = APIRouter(prefix="/api/v1", tags=["v1"])
 )
 async def root() -> dict:
     """Simple health check endpoint."""
-    return {"status": "ok", "message": "FatPai Resume-JD Matching API is running."}
+    return {"status": "ok", "message": "Hire_AI Resume-JD Matching API is running."}
 
 
 @router.get(

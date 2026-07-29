@@ -7,6 +7,9 @@
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   1. ORIGINAL DARK THEME (100% PRESERVED & UNTOUCHED)
+   ───────────────────────────────────────────────────────────── */
 body {
   font-family: var(--font-sans);
   background-color: #090a0f;
@@ -93,4 +96,228 @@ body {
 
 .animate-pulse-glow {
   animation: pulseGlow 6s infinite ease-in-out;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2. HIGH-CONTRAST PINKISH-PEACH DAY THEME (POLYMER STYLE)
+   ───────────────────────────────────────────────────────────── */
+html:not(.dark),
+html:not(.dark) body,
+html:not(.dark) #root,
+html:not(.dark) .min-h-screen {
+  background: linear-gradient(180deg, #FDE8F4 0%, #FCE4EC 25%, #FFF3E0 50%, #FCE4EC 75%, #FDE8F4 100%) !important;
+  background-attachment: fixed !important;
+  color: #0F172A !important;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #FDE8F4 !important;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #EC4899 !important;
+  border-radius: 4px !important;
+}
+
+/* High Contrast Floating White Cards & Panels */
+html:not(.dark) .glass-panel {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1.5px solid rgba(244, 114, 182, 0.35) !important;
+  box-shadow: 0 14px 40px -10px rgba(219, 39, 119, 0.12) !important;
+}
+
+html:not(.dark) .glass-card {
+  background: #FFFFFF !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1.5px solid rgba(244, 114, 182, 0.3) !important;
+  box-shadow: 0 8px 24px -6px rgba(219, 39, 119, 0.08) !important;
+}
+
+html:not(.dark) .glass-card-hover:hover {
+  border-color: #DB2777 !important;
+  box-shadow: 0 16px 36px -8px rgba(219, 39, 119, 0.22) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* High Contrast Headings & Gradient Accent */
+html:not(.dark) .text-gradient {
+  background: linear-gradient(135deg, #0F172A 0%, #DB2777 50%, #EA580C 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html:not(.dark) .text-gradient-purple {
+  background: linear-gradient(135deg, #BE185D 0%, #DB2777 50%, #EC4899 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html:not(.dark) .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(236, 72, 153, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(236, 72, 153, 0.08) 1px, transparent 1px) !important;
+}
+
+/* High-Contrast Typography Override */
+html:not(.dark) .text-white {
+  color: #0F172A !important;
+}
+
+html:not(.dark) .text-gray-100 {
+  color: #0F172A !important;
+}
+
+html:not(.dark) .text-gray-200 {
+  color: #1E293B !important;
+}
+
+html:not(.dark) .text-gray-300 {
+  color: #334155 !important;
+  font-weight: 500 !important;
+}
+
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-gray-500 {
+  color: #475569 !important;
+  font-weight: 500 !important;
+}
+
+/* High-Contrast Borders */
+html:not(.dark) .border-white\/10,
+html:not(.dark) .border-white\/20,
+html:not(.dark) .border-white\/15,
+html:not(.dark) .border-white\/5,
+html:not(.dark) .border-white\/30 {
+  border-color: rgba(244, 114, 182, 0.35) !important;
+}
+
+/* Sub-containers & Inputs */
+html:not(.dark) .bg-white\/5,
+html:not(.dark) .bg-white\/10,
+html:not(.dark) .bg-white\/\[0\.02\],
+html:not(.dark) .bg-white\/\[0\.01\] {
+  background-color: #FFF1F2 !important;
+  border-color: rgba(244, 114, 182, 0.3) !important;
+}
+
+html:not(.dark) .bg-\[\#0d0e15\],
+html:not(.dark) .bg-\[\#090a0f\],
+html:not(.dark) .bg-\[\#141824\] {
+  background-color: #FFFFFF !important;
+  border-color: rgba(244, 114, 182, 0.35) !important;
+}
+
+html:not(.dark) textarea.bg-\[\#0d0e15\] {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #F472B6 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not(.dark) pre.bg-\[\#0d0e15\] {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #F472B6 !important;
+}
+
+/* Accents & Icons in Light Mode */
+html:not(.dark) .text-indigo-300,
+html:not(.dark) .text-indigo-400,
+html:not(.dark) .text-purple-300,
+html:not(.dark) .text-purple-400 {
+  color: #BE185D !important;
+}
+
+html:not(.dark) .bg-indigo-500\/10,
+html:not(.dark) .bg-purple-500\/10 {
+  background-color: #FCE7F3 !important;
+  border-color: #F472B6 !important;
+}
+
+html:not(.dark) .border-indigo-500\/20,
+html:not(.dark) .border-purple-500\/20 {
+  border-color: #F472B6 !important;
+}
+
+/* ── 3. POLYMER HIGH-CONTRAST SOLID BLACK ACTIVE BUTTONS & TABS ── */
+html:not(.dark) .bg-indigo-600,
+html:not(.dark) .bg-purple-600,
+html:not(.dark) .bg-pink-600,
+html:not(.dark) .bg-gradient-to-r.from-indigo-600.via-purple-600.to-pink-600,
+html:not(.dark) .bg-gradient-to-r.from-indigo-600.via-purple-600.to-indigo-700,
+html:not(.dark) .bg-gradient-to-r.from-indigo-600.to-purple-600 {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.3) !important;
+}
+
+html:not(.dark) .bg-indigo-600 *,
+html:not(.dark) .bg-purple-600 *,
+html:not(.dark) .bg-pink-600 * {
+  color: #FFFFFF !important;
+}
+
+/* ── 4. UPLOADED PDF / DOCX FILE CARD STYLING (POLYMER PINKISH THEME) ── */
+html:not(.dark) .bg-indigo-950\/30,
+html:not(.dark) .bg-purple-950\/30 {
+  background-color: #FCE7F3 !important;
+  border: 1.5px solid #F472B6 !important;
+  box-shadow: 0 4px 15px rgba(219, 39, 119, 0.08) !important;
+}
+
+html:not(.dark) .bg-indigo-500\/20,
+html:not(.dark) .bg-purple-500\/20 {
+  background-color: #DB2777 !important;
+  color: #FFFFFF !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+}
+
+html:not(.dark) .bg-indigo-950\/30 .text-white,
+html:not(.dark) .bg-purple-950\/30 .text-white {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+html:not(.dark) .bg-indigo-950\/30 .text-gray-400,
+html:not(.dark) .bg-purple-950\/30 .text-gray-400 {
+  color: #475569 !important;
+  font-weight: 500 !important;
+}
+
+html:not(.dark) .bg-indigo-950\/30 .text-emerald-400,
+html:not(.dark) .bg-purple-950\/30 .text-emerald-400 {
+  color: #059669 !important;
+}
+
+html:not(.dark) .bg-indigo-950\/30 button,
+html:not(.dark) .bg-purple-950\/30 button {
+  background-color: #FBCFE8 !important;
+  color: #BE185D !important;
+  border: 1px solid #F472B6 !important;
+}
+
+html:not(.dark) .bg-indigo-950\/30 button:hover,
+html:not(.dark) .bg-purple-950\/30 button:hover {
+  background-color: #DB2777 !important;
+  color: #FFFFFF !important;
+}
+
+/* Sample Pre-load Buttons */
+html:not(.dark) .bg-indigo-600\/15,
+html:not(.dark) .bg-purple-600\/15 {
+  background-color: #FCE7F3 !important;
+  color: #9D174D !important;
+  border-color: #F472B6 !important;
+  font-weight: 600 !important;
+}
+
+html:not(.dark) .bg-indigo-600\/15:hover,
+html:not(.dark) .bg-purple-600\/15:hover {
+  background-color: #FBCFE8 !important;
+  border-color: #DB2777 !important;
 }

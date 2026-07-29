@@ -1,1 +1,1 @@
-"""FatPai Resume-JD Semantic Matching Backend."""
+"""Hire_AI Resume-JD Semantic Matching Backend."""

@@ -3,7 +3,7 @@
 
 services:
   - type: web
-    name: fatpai-resume-jd
+    name: hire-ai-resume-jd
     runtime: python
     region: oregon
     plan: starter

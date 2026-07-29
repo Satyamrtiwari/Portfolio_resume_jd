@@ -56,7 +56,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
     settings = get_settings()
 
     logger.info("=" * 60)
-    logger.info("Starting FatPai Resume-JD Matching API v%s", settings.APP_VERSION)
+    logger.info("Starting Hire_AI Resume-JD Matching API v%s", settings.APP_VERSION)
     logger.info("=" * 60)
 
     # Record startup time
@@ -86,7 +86,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
     yield
 
     # ── Shutdown ────────────────────────────────────────────────────
-    logger.info("Shutting down FatPai Resume-JD Matching API...")
+    logger.info("Shutting down Hire_AI Resume-JD Matching API...")
     logger.info("Goodbye.")
 
 
@@ -103,7 +103,7 @@ def create_app() -> FastAPI:
     settings = get_settings()
 
     app = FastAPI(
-        title="FatPai Resume-JD Semantic Matching API",
+        title="Hire_AI Resume-JD Semantic Matching API",
         description=(
             "Production-grade AI backend for semantic matching between "
             "resumes and job descriptions. Uses BAAI/bge-large-en-v1.5 "

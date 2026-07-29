@@ -1,12 +1,12 @@
 [project]
-name = "fatpai-resume-jd"
+name = "hire-ai-resume-jd"
 version = "1.0.0"
 description = "Production-grade AI Resume–JD Semantic Matching Backend using BAAI/bge-large-en-v1.5 embeddings, section-wise matching, and weighted hybrid scoring."
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [
-    { name = "FatPai", email = "fatpai@example.com" },
+    { name = "Hire_AI", email = "hire_ai@example.com" },
 ]
 
 dependencies = [

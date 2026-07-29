@@ -22,8 +22,6 @@ except ImportError:
     TextEmbedding = None  # type: ignore[assignment, misc]
     _HAS_FASTEMBED = False
 
-from sentence_transformers import SentenceTransformer
-
 from app.config.settings import get_settings
 from app.utils.exceptions import ModelLoadError
 
@@ -95,6 +93,7 @@ class EmbeddingService:
                 self._device = "cpu (ONNX Runtime)"
             else:
                 self._engine = "sentence-transformers"
+                from sentence_transformers import SentenceTransformer
                 self._model = SentenceTransformer(self._model_name)
                 self._device = str(self._model.device)
                 self._embedding_dimension = self._model.get_sentence_embedding_dimension()  # type: ignore[assignment]
@@ -117,6 +116,7 @@ class EmbeddingService:
                 logger.warning("FastEmbed load failed (%s). Falling back to SentenceTransformers ...", exc)
                 try:
                     self._engine = "sentence-transformers"
+                    from sentence_transformers import SentenceTransformer
                     self._model = SentenceTransformer(self._model_name)
                     self._device = str(self._model.device)
                     self._embedding_dimension = self._model.get_sentence_embedding_dimension()  # type: ignore[assignment]
